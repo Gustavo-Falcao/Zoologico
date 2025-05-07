@@ -1,4 +1,5 @@
 package Zoologico.model;
 
-public class AnimalAquatico {
+public class AnimalAquatico{
+
 }

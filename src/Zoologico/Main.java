@@ -1,33 +1,30 @@
 package Zoologico;
 
-import Zoologico.service.AnimalManeger;
+import Zoologico.service.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        AnimalManeger gerenciadorAnimais = new AnimalManeger();
+        AnimalManager gerenciadorAnimais = new AnimalManager();
         Scanner ler = new Scanner(System.in);
+        InputHelper pegarInput = new InputHelper();
 
         System.out.println("Animais");
         System.out.println("[1]Animal terrestre");
         System.out.println("[2]Animal aereo");
         System.out.println("[3]Animal aquatico");
-        System.out.print("Escolha uma opcao: ");
-        int opcaoAnimal = Integer.parseInt(ler.nextLine());
+        int opcaoAnimal = pegarInput.pegarInteiro("Escolha uma opcao: ");
 
         if(opcaoAnimal == 2) {
-            String tipoAnimal = "aereo";
             System.out.println("Animais aereos");
             System.out.println("[1]Falcão");
             System.out.println("[2]Papagaio");
             System.out.println("[3]Aguia");
-            System.out.print("Escolha uma opcao: ");
-            int opcaoTipoAnimal = Integer.parseInt(ler.nextLine());
+            int opcaoTipoAnimal = pegarInput.pegarInteiro("Escolha uma opcao: ");
 
             if(opcaoTipoAnimal == 3) {
-                String nomeAnimal = "aguia";
-                gerenciadorAnimais.adicionarAnimal(tipoAnimal, nomeAnimal);
+                gerenciadorAnimais.adicionarAguia();
             }
         }
 
