@@ -1,35 +1,55 @@
 package Zoologico;
 
-import Zoologico.service.*;
-import java.util.Scanner;
+import Zoologico.service.*;;
 
 public class Main {
 
     public static void main(String[] args) {
         AnimalManager gerenciadorAnimais = new AnimalManager();
-        Scanner ler = new Scanner(System.in);
         InputHelper pegarInput = new InputHelper();
+        OutputHelper mostrarOutput = new OutputHelper();
+        int opcaoMenuMain;
 
-        System.out.println("Animais");
-        System.out.println("[1]Animal terrestre");
-        System.out.println("[2]Animal aereo");
-        System.out.println("[3]Animal aquatico");
-        int opcaoAnimal = pegarInput.pegarInteiro("Escolha uma opcao: ");
+        do {
+            mostrarOutput.mostrarMenuPrincipal();
+            opcaoMenuMain = pegarInput.pegarInteiro("Escolha uma opção: ");
 
-        if(opcaoAnimal == 2) {
-            System.out.println("Animais aereos");
-            System.out.println("[1]Falcão");
-            System.out.println("[2]Papagaio");
-            System.out.println("[3]Aguia");
-            int opcaoTipoAnimal = pegarInput.pegarInteiro("Escolha uma opcao: ");
+            switch (opcaoMenuMain) {
+                case 1:
+                    mostrarOutput.mostrarOpcaoHabitatAnimais();
+                    int opcaoMenuHabitat = pegarInput.pegarInteiro("Escolha uma opção: ");
 
-            if(opcaoTipoAnimal == 3) {
-                gerenciadorAnimais.adicionarAguia();
+                    switch (opcaoMenuHabitat) {
+                        case 1:
+                            mostrarOutput.mostrarOpcaoAnimaisTerrestres();
+                            int opcaoAnimalTerrestre = pegarInput.pegarInteiro("Escolha uma opção: ");
+                            break;
+                        case 2:
+                            mostrarOutput.mostrarOpcaoAnimaisAereos();
+                            int opcaoAnimalAereo = pegarInput.pegarInteiro("Escolha uma opção: ");
+                            break;
+                        case 3:
+                            mostrarOutput.mostrarOpcaoAnimaisAquaticos();
+                            int opcaoAnimalAquatico = pegarInput.pegarInteiro("Escolha uma opção: ");
+                            break;
+                        case 0:
+                            System.out.println("Saindo...");
+                            break;
+                        default:
+                            System.out.println("Escolha uma opção válida!!");
+                            break;
+                    }
+                    break;
+                case 2:
+                    mostrarOutput.mostrarOpcaoListarAnimais();
+                    int opcaoListarAnimal = pegarInput.pegarInteiro("Escolha uma opção: ");
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+
             }
-        }
-
-        gerenciadorAnimais.listarAnimais();
-
-
+        }while(opcaoMenuMain != 0);
+        pegarInput.fecharLeitor();
     }
 }

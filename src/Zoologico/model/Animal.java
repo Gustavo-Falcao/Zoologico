@@ -53,12 +53,12 @@ public abstract class Animal {
     public abstract void movimentar();
 
     public void getInfoDetalhadaAnimais() {
-        System.out.println("Nome: " + getNome());
-        System.out.println("Especie: " + getEspecie());
-        System.out.println("Idade: " + getIdade());
-        System.out.println("Peso: " + getPeso() + " Kg");
-        System.out.println("Altura: " + getAltura() + " Cm");
-        System.out.println("Comprimento: " + getComprimento() + " Cm");
-        System.out.println("Cor: " + getCor());
+        System.out.println("| -> Nome: " + getNome());
+        System.out.println("| -> Especie: " + getEspecie());
+        System.out.println("| -> Idade: " + getIdade());
+        System.out.println("| -> Peso: " + getPeso() + " Kg");
+        System.out.println("| -> Altura: " + getAltura() + " Cm");
+        System.out.println("| -> Comprimento: " + getComprimento() + " Cm");
+        System.out.println("| -> Cor: " + getCor());
     }
 }

@@ -20,4 +20,8 @@ public class InputHelper {
         System.out.print(frase);
         return ler.nextLine();
     }
+
+    public void fecharLeitor() {
+        ler.close();
+    }
 }
