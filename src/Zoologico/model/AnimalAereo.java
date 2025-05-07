@@ -13,4 +13,15 @@ public abstract class AnimalAereo extends Animal {
         this.velocidadeMaxVoo = velocidadeMaxVoo;
     }
 
+    public double getAlcanceMAxAltura() {
+        return alcanceMAxAltura;
+    }
+
+    public double getTempoMaxVoo() {
+        return tempoMaxVoo;
+    }
+
+    public double getVelocidadeMaxVoo() {
+        return velocidadeMaxVoo;
+    }
 }

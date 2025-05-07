@@ -20,6 +20,34 @@ public abstract class Animal {
         this.cor = cor;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public double getComprimento() {
+        return comprimento;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
     public abstract void descansar();
     public abstract void acordar();
     public abstract void movimentar();
