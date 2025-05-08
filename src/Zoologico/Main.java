@@ -26,6 +26,9 @@ public class Main {
 
                             switch (opcaoAnimalTerrestre) {
                                 case 1:
+                                    gerenciadorAnimais.adicionarCapivara();
+                                    break;
+                                case 2:
 
                             }
                             break;

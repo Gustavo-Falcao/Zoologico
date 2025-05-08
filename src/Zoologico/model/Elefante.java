@@ -1,4 +1,4 @@
 package Zoologico.model;
 
-public class Elefante {
+public class Elefante{
 }
