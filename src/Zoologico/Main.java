@@ -29,7 +29,14 @@ public class Main {
                                     gerenciadorAnimais.adicionarCapivara();
                                     break;
                                 case 2:
-
+                                    gerenciadorAnimais.adicionarElefante();
+                                    break;
+                                case 0:
+                                    System.out.println("Saindo...");
+                                    break;
+                                default:
+                                    System.out.println("Escolha uma opção válida!!");
+                                    break;
                             }
                             break;
                         case 2:
@@ -51,6 +58,29 @@ public class Main {
                 case 2:
                     mostrarOutput.mostrarOpcaoListarAnimais();
                     int opcaoListarAnimal = pegarInput.pegarInteiro("Escolha uma opção: ");
+
+                    switch (opcaoListarAnimal) {
+                        case 1:
+                            mostrarOutput.mostrarOpcaoHabitatAnimais();
+                            int opcaLisPorHabitat = pegarInput.pegarInteiro("Escolha uma opção: ");
+
+                            if(opcaLisPorHabitat == 1) {
+                                mostrarOutput.mostrarAnimaisTerrestres(gerenciadorAnimais);
+                            }
+                            else if(opcaoListarAnimal == 0) {
+                                System.out.println("Saindo...");
+                            }
+                            else {
+                                System.out.println("Escolha uma opção válida!!");
+                            }
+                            break;
+                        case 0:
+                            System.out.println("Saindo...");
+                            break;
+                        default:
+                            System.out.println("Escolha uma opção válida!!");
+                            break;
+                    }
                     break;
                 case 0:
                     System.out.println("Saindo...");

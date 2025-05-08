@@ -5,6 +5,7 @@ import java.util.List;
 
 public class OutputHelper {
 
+    // mostra todos os animais e todos os seus atributos
     public void mostrarAnimaisDetalhados(AnimalManager animalManager) {
         List<Animal> animais = animalManager.getAnimais();
         System.out.println("\n\n-----------------------------------");
@@ -17,6 +18,20 @@ public class OutputHelper {
             }
             System.out.println("-----------------------------------");
         }
+    }
+
+    // mostra todos os animais terrestres
+    public void mostrarAnimaisTerrestres(AnimalManager animalManager) {
+        List<AnimalTerrestre> listTerrestres = animalManager.getAnimaisTerrestres();
+        System.out.println("----------------------------------");
+        System.out.println("|  <<-- Animais Terrestres -->>  |");
+        System.out.println("----------------------------------");
+        for(AnimalTerrestre animalTerrestre : listTerrestres) {
+            System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalTerrestre));
+            animalTerrestre.getInfoAnimaisTerrestres();
+            System.out.println("|");
+        }
+        System.out.println("----------------------------------");
     }
 
     public void mostrarMenuPrincipal() {

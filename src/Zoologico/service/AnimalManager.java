@@ -10,6 +10,7 @@ public class AnimalManager {
     private final List<Animal> animais = new ArrayList<>();
     private final InputHelper pegarInput = new InputHelper();
 
+    // solicita informações e adiciona o objeto Aguia na lista de animais
     public void adicionarAguia() {
         String nome = solicitarNomeAnimal();
         String especie = solicitarEspecieAnimal();
@@ -25,10 +26,12 @@ public class AnimalManager {
         animais.add(criarAguia(nome, especie, idade, peso, altura, comprimento, cor, alcanceMaximoAltura, tempoMaximoVoo, veloMax));
     }
 
+    // retorna uma instância criada do objeto Aguia
     private Aguia criarAguia(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, double alcanceMaxAltura, double tempoMaxVoo, double veloMax) {
         return new Aguia(nome, especie, idade, peso, altura, comprimento, cor, alcanceMaxAltura, tempoMaxVoo, veloMax);
     }
 
+    // solicita informações e adiciona o objeto Capivara na lista de animais
     public void adicionarCapivara() {
         String nome = solicitarNomeAnimal();
         String especie = solicitarEspecieAnimal();
@@ -38,13 +41,39 @@ public class AnimalManager {
         double comprimento = solicitarComprimentoAnimal();
         String cor = solicitarCorAnimal();
         int numeroPatas = pegarInput.pegarInteiro("Digite o número de patas: ");
-        String opcaoAlimentar = pegarInput.pegarString("Digite o opção alimentar: ");
+        String opcaoAlimentar = pegarInput.pegarString("Digite a opção alimentar: ");
 
-        animais.add(criarCapivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar));
+        if(animais.add(criarCapivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar))) {
+            System.out.println("Capivara adicionada com sucesso!!");
+        } else {
+            System.out.println("Não foi possível adicionar a Capivara!!");
+        }
+
     }
 
+    // retorna uma instância criada do objeto Capivara
     private Capivara criarCapivara(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPata, String opcaoAlimentar){
         return new Capivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPata, opcaoAlimentar);
+    }
+
+    // solicita informações e adiciona o objeto Elefante na lista de animais
+    public void adicionarElefante() {
+        String nome = solicitarNomeAnimal();
+        String especie = solicitarEspecieAnimal();
+        int idade = solicitarIdadeAnimal();
+        double peso = solicitarPesoAnimal();
+        double altura = solicitarAlturaAnimal();
+        double comprimento = solicitarComprimentoAnimal();
+        String cor = solicitarCorAnimal();
+        int numeroPatas = pegarInput.pegarInteiro("Digite o número de patas: ");
+        String opcaoAlimentar = pegarInput.pegarString("Digite a opção alimentar: ");
+
+        animais.add(criarElefante(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar));
+    }
+
+    // retorna uma instância criada do objeto Elefante
+    private Elefante criarElefante(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPatas, String opcaoAlimentar) {
+        return new Elefante(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar);
     }
 
     private String solicitarNomeAnimal() {
@@ -75,8 +104,25 @@ public class AnimalManager {
         return pegarInput.pegarString("Digite a cor: ");
     }
 
+    // retorna uma cópia da lista dos animais cadastrados
     public List<Animal> getAnimais() {
         return new ArrayList<>(this.animais);
+    }
+
+    // retorna o nome da classe do animal
+    public String getNomeClasseAnimal(Animal animal) {
+        return animal.getClass().getSimpleName();
+    }
+
+    // retorna uma lista somente com os animais herdeiros da classe AnimaisTerrestres
+    public List<AnimalTerrestre> getAnimaisTerrestres() {
+        List<AnimalTerrestre> animaisTerrestres = new ArrayList<>();
+        for(Animal animal : this.animais) {
+            if(animal instanceof AnimalTerrestre animalTerrestre) {
+                animaisTerrestres.add(animalTerrestre);
+            }
+        }
+        return animaisTerrestres;
     }
 
     public void listarAnimais() {

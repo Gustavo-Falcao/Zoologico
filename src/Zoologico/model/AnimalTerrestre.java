@@ -19,4 +19,10 @@ public abstract class AnimalTerrestre extends Animal {
     public String getOpcaoAlimentar() {
         return opcaoAlimentar;
     }
+
+    public void getInfoAnimaisTerrestres() {
+        super.getInfoDetalhadaAnimais();
+        System.out.println("| -> Numero de patas: " + getNumeroPatas());
+        System.out.println("| -> Opção alimentar: " + getOpcaoAlimentar());
+    }
 }
