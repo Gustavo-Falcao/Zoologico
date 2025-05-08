@@ -1,6 +1,6 @@
 package Zoologico.model;
 
-public class Aguia extends AnimalAereo implements SomAnimal {
+public class Aguia extends AnimalAereo implements SomAnimal, Habilidade {
 
     public Aguia(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, double alcanceMAxAltura, double tempoMaxVoo, double velocidadeMaxVoo) {
         super(nome, especie, idade, peso, altura, comprimento, cor, alcanceMAxAltura, tempoMaxVoo, velocidadeMaxVoo);

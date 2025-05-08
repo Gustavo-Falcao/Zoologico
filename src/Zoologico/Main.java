@@ -23,6 +23,11 @@ public class Main {
                         case 1:
                             mostrarOutput.mostrarOpcaoAnimaisTerrestres();
                             int opcaoAnimalTerrestre = pegarInput.pegarInteiro("Escolha uma opção: ");
+
+                            switch (opcaoAnimalTerrestre) {
+                                case 1:
+
+                            }
                             break;
                         case 2:
                             mostrarOutput.mostrarOpcaoAnimaisAereos();
@@ -47,7 +52,9 @@ public class Main {
                 case 0:
                     System.out.println("Saindo...");
                     break;
-
+                default:
+                    System.out.println("Escolha uma opção válida!!");
+                    break;
             }
         }while(opcaoMenuMain != 0);
         pegarInput.fecharLeitor();

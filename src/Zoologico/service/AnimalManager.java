@@ -29,6 +29,24 @@ public class AnimalManager {
         return new Aguia(nome, especie, idade, peso, altura, comprimento, cor, alcanceMaxAltura, tempoMaxVoo, veloMax);
     }
 
+    public void adicionarCapivara() {
+        String nome = solicitarNomeAnimal();
+        String especie = solicitarEspecieAnimal();
+        int idade = solicitarIdadeAnimal();
+        double peso = solicitarPesoAnimal();
+        double altura = solicitarAlturaAnimal();
+        double comprimento = solicitarComprimentoAnimal();
+        String cor = solicitarCorAnimal();
+        int numeroPatas = pegarInput.pegarInteiro("Digite o número de patas: ");
+        String opcaoAlimentar = pegarInput.pegarString("Digite o opção alimentar: ");
+
+        animais.add(criarCapivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar));
+    }
+
+    private Capivara criarCapivara(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPata, String opcaoAlimentar){
+        return new Capivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPata, opcaoAlimentar);
+    }
+
     private String solicitarNomeAnimal() {
         return pegarInput.pegarString("Digite o nome: ");
     }
