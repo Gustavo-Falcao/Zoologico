@@ -47,6 +47,10 @@ public class AnimalManager {
         return new Capivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPata, opcaoAlimentar);
     }
 
+    public void adicionarElefante() {
+
+    }
+
     private String solicitarNomeAnimal() {
         return pegarInput.pegarString("Digite o nome: ");
     }
