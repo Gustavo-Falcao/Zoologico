@@ -62,12 +62,15 @@ public class Main {
                     switch (opcaoListarAnimal) {
                         case 1:
                             mostrarOutput.mostrarOpcaoHabitatAnimais();
-                            int opcaLisPorHabitat = pegarInput.pegarInteiro("Escolha uma opção: ");
+                            int opcaoListPorHabitat = pegarInput.pegarInteiro("Escolha uma opção: ");
 
-                            if(opcaLisPorHabitat == 1) {
+                            if(opcaoListPorHabitat == 1) {
                                 mostrarOutput.mostrarAnimaisTerrestres(gerenciadorAnimais);
                             }
-                            else if(opcaoListarAnimal == 0) {
+                            else if(opcaoListPorHabitat == 2) {
+                                mostrarOutput.mostrarAnimaisAereos(gerenciadorAnimais);
+                            }
+                            else if(opcaoListPorHabitat == 0) {
                                 System.out.println("Saindo...");
                             }
                             else {

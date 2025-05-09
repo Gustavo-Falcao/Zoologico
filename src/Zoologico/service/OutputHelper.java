@@ -22,17 +22,40 @@ public class OutputHelper {
 
     // mostra todos os animais terrestres
     public void mostrarAnimaisTerrestres(AnimalManager animalManager) {
-        List<AnimalTerrestre> listTerrestres = animalManager.getAnimaisTerrestres();
-        System.out.println("----------------------------------");
-        System.out.println("|  <<-- Animais Terrestres -->>  |");
-        System.out.println("----------------------------------");
-        for(AnimalTerrestre animalTerrestre : listTerrestres) {
-            System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalTerrestre));
-            animalTerrestre.getInfoAnimaisTerrestres();
-            System.out.println("|");
+        if(!animalManager.getAnimaisTerrestres().isEmpty()) {
+            List<AnimalTerrestre> listTerrestres = animalManager.getAnimaisTerrestres();
+            System.out.println("----------------------------------");
+            System.out.println("|  <<-- Animais Terrestres -->>  |");
+            System.out.println("----------------------------------");
+            for(AnimalTerrestre animalTerrestre : listTerrestres) {
+                System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalTerrestre));
+                animalTerrestre.getInfoAnimalTerrestre();
+                System.out.println("|");
+            }
+            System.out.println("----------------------------------");
+        } else {
+            System.out.println("Nenhum animal terrestre cadastrado ainda!!");
         }
-        System.out.println("----------------------------------");
     }
+
+    // mostra todos os animais Aereos
+    public void mostrarAnimaisAereos(AnimalManager animalManager) {
+        if(!animalManager.getAnimaisAereos().isEmpty()) {
+            List<AnimalAereo> listAereos = animalManager.getAnimaisAereos();
+            System.out.println("----------------------------------");
+            System.out.println("|  <<-- Animais Terrestres -->>  |");
+            System.out.println("----------------------------------");
+            for(AnimalAereo animalAereo : listAereos) {
+                System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalAereo));
+                animalAereo.getInfoAnimaisAereos();
+                System.out.println("|");
+            }
+            System.out.println("----------------------------------");
+        } else {
+            System.out.println("Nenhum animal aereo cadastrado ainda!!");
+        }
+    }
+
 
     public void mostrarMenuPrincipal() {
         System.out.println("\n\n---------------------------------------------------------");

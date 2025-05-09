@@ -125,6 +125,18 @@ public class AnimalManager {
         return animaisTerrestres;
     }
 
+    // retorna uma lista somente com os animais herdeiros da classe AnimaisAereos
+    public List<AnimalAereo> getAnimaisAereos() {
+        List<AnimalAereo> animaisAereos = new ArrayList<>();
+        for(Animal animal : this.animais) {
+            if(animal instanceof AnimalAereo animalAereo) {
+                animaisAereos.add(animalAereo);
+            }
+        }
+        return animaisAereos;
+    }
+
+
     public void listarAnimais() {
         for(Animal animal : animais) {
             System.out.println("Nome: " + animal.getNome());
