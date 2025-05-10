@@ -58,16 +58,17 @@ public class OutputHelper {
 
 
     public void mostrarMenuPrincipal() {
-        System.out.println("\n\n---------------------------------------------------------");
-        System.out.println("|  << --  Gerenciamento de Animais no Zoologico  -- >>  |");
-        System.out.println("---------------------------------------------------------");
-        System.out.println("|               ##-[1] Cadastrar animal                 |");
-        System.out.println("|               ##-[2] Listar animais                   |");
-        System.out.println("|               ##-[3] Buscar animal                    |");
-        System.out.println("|               ##-[4] Acessar animal                   |");
-        System.out.println("|               ##-[5] Excluir animal                   |");
-        System.out.println("|               ##-[0] Sair                             |");
-        System.out.println("---------------------------------------------------------");
+        System.out.println("\n\n⌈‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⌉");
+        System.out.println("⎜  << --  Gerenciamento de Animais no Zoologico  -- >>  ⎜");
+        System.out.println("⎜_______________________________________________________⎜");
+        System.out.println("⎜                                                       ⎜");
+        System.out.println("⎜                 ##-[1] Cadastrar animal               ⎜");
+        System.out.println("⎜                 ##-[2] Listar animais                 ⎜");
+        System.out.println("⎜                 ##-[3] Buscar animal                  ⎜");
+        System.out.println("⎜                 ##-[4] Acessar animal                 ⎜");
+        System.out.println("⎜                 ##-[5] Excluir animal                 ⎜");
+        System.out.println("⎜                 ##-[0] Sair                           ⎜");
+        System.out.println("⌊⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⌋");
     }
 
     public void mostrarOpcaoHabitatAnimais() {
