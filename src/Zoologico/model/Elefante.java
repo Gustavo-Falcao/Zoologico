@@ -1,8 +1,8 @@
 package Zoologico.model;
 
 public class Elefante extends AnimalTerrestre{
-    public Elefante(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPatas, String opcaoAlimentar) {
-        super(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar);
+    public Elefante(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, int numeroPatas, String opcaoAlimentar) {
+        super(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, numeroPatas, opcaoAlimentar);
     }
 
     @Override

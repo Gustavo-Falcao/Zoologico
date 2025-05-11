@@ -61,7 +61,6 @@ public class OutputHelper {
         System.out.println("+ ----------------------------------------------------- +");
         System.out.println("|  << --  Gerenciamento de Animais no Zoologico  -- >>  |");
         System.out.println("+ ----------------------------------------------------- +");
-        System.out.println("|                                                       |");
         System.out.println("|                 ##-[1] Cadastrar animal               |");
         System.out.println("|                 ##-[2] Listar animais                 |");
         System.out.println("|                 ##-[3] Buscar animal                  |");
