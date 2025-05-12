@@ -22,46 +22,69 @@ public class OutputHelper {
 
     // mostra todos os animais terrestres
     public void mostrarAnimaisTerrestres(AnimalManager animalManager) {
-        List<AnimalTerrestre> listTerrestres = animalManager.getAnimaisTerrestres();
-        System.out.println("----------------------------------");
-        System.out.println("|  <<-- Animais Terrestres -->>  |");
-        System.out.println("----------------------------------");
-        for(AnimalTerrestre animalTerrestre : listTerrestres) {
-            System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalTerrestre));
-            animalTerrestre.getInfoAnimaisTerrestres();
-            System.out.println("|");
+        if(!animalManager.getAnimaisTerrestres().isEmpty()) {
+            List<AnimalTerrestre> listTerrestres = animalManager.getAnimaisTerrestres();
+            System.out.println("----------------------------------");
+            System.out.println("|  <<-- Animais Terrestres -->>  |");
+            System.out.println("----------------------------------");
+            for(AnimalTerrestre animalTerrestre : listTerrestres) {
+                System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalTerrestre));
+                animalTerrestre.getInfoAnimalTerrestre();
+                System.out.println("|");
+            }
+            System.out.println("----------------------------------");
+        } else {
+            System.out.println("Nenhum animal terrestre cadastrado ainda!!");
         }
-        System.out.println("----------------------------------");
     }
 
+    // mostra todos os animais Aereos
+    public void mostrarAnimaisAereos(AnimalManager animalManager) {
+        if(!animalManager.getAnimaisAereos().isEmpty()) {
+            List<AnimalAereo> listAereos = animalManager.getAnimaisAereos();
+            System.out.println("----------------------------------");
+            System.out.println("|  <<-- Animais Terrestres -->>  |");
+            System.out.println("----------------------------------");
+            for(AnimalAereo animalAereo : listAereos) {
+                System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalAereo));
+                animalAereo.getInfoAnimaisAereos();
+                System.out.println("|");
+            }
+            System.out.println("----------------------------------");
+        } else {
+            System.out.println("Nenhum animal aereo cadastrado ainda!!");
+        }
+    }
+
+
     public void mostrarMenuPrincipal() {
-        System.out.println("\n\n---------------------------------------------------------");
+        System.out.println("+ ----------------------------------------------------- +");
         System.out.println("|  << --  Gerenciamento de Animais no Zoologico  -- >>  |");
-        System.out.println("---------------------------------------------------------");
-        System.out.println("|               ##-[1] Cadastrar animal                 |");
-        System.out.println("|               ##-[2] Listar animais                   |");
-        System.out.println("|               ##-[3] Buscar animal                    |");
-        System.out.println("|               ##-[4] Acessar animal                   |");
-        System.out.println("|               ##-[5] Excluir animal                   |");
-        System.out.println("|               ##-[0] Sair                             |");
-        System.out.println("---------------------------------------------------------");
+        System.out.println("+ ----------------------------------------------------- +");
+        System.out.println("|                 ##-[1] Cadastrar animal               |");
+        System.out.println("|                 ##-[2] Listar animais                 |");
+        System.out.println("|                 ##-[3] Buscar animal                  |");
+        System.out.println("|                 ##-[4] Acessar animal                 |");
+        System.out.println("|                 ##-[5] Excluir animal                 |");
+        System.out.println("|                 ##-[0] Sair                           |");
+        System.out.println("+ ----------------------------------------------------- +");
     }
 
     public void mostrarOpcaoHabitatAnimais() {
-        System.out.println("\n\n---------------------------------");
+        System.out.println("\n\n+ ----------------------------- +");
         System.out.println("|  << -- Habitat animais -- >>  |");
         System.out.println("---------------------------------");
         System.out.println("|       ##-[1] Terrestre        |");
         System.out.println("|       ##-[2] Aereo            |");
         System.out.println("|       ##-[3] Aquatico         |");
         System.out.println("|       ##-[0] Sair             |");
-        System.out.println("---------------------------------");
+        System.out.println("+ ----------------------------- +");
     }
 
     public void mostrarOpcaoAnimaisTerrestres() {
-        System.out.println("\n\n------------------------------------");
+        System.out.println("\n\n+ -------------------------------- +");
         System.out.println("|  << -- Animais Terrestres -- >>  |");
-        System.out.println("------------------------------------");
+        System.out.println("+ -------------------------------- +");
         System.out.println("|       ##-[1] Capivara            |");
         System.out.println("|       ##-[2] Elefante            |");
         System.out.println("|       ##-[3] Galinha D'angola    |");
@@ -74,26 +97,26 @@ public class OutputHelper {
         System.out.println("|       ##-[10] Tigre              |");
         System.out.println("|       ##-[11] Avestruz           |");
         System.out.println("|       ##-[0] Sair                |");
-        System.out.println("------------------------------------");
+        System.out.println("+ -------------------------------- +");
     }
 
     public void mostrarOpcaoAnimaisAereos() {
-        System.out.println("\n\n--------------------------------");
+        System.out.println("\n\n+ ---------------------------- +");
         System.out.println("|  << -- Animais Aereos -- >>  |");
-        System.out.println("--------------------------------");
+        System.out.println("+ ---------------------------- +");
         System.out.println("|        ##-[1] Arara          |");
         System.out.println("|        ##-[2] Coruja         |");
         System.out.println("|        ##-[3] Falcão         |");
         System.out.println("|        ##-[4] Papagaio       |");
         System.out.println("|        ##-[5] Águia          |");
         System.out.println("|        ##-[0] Sair           |");
-        System.out.println("--------------------------------");
+        System.out.println("+ ---------------------------- +");
     }
 
     public void mostrarOpcaoAnimaisAquaticos() {
-        System.out.println("\n\n-----------------------------------");
+        System.out.println("\n\n+ ------------------------------- +");
         System.out.println("|  << -- Animais Aquaticos -- >>  |");
-        System.out.println("-----------------------------------");
+        System.out.println("+ ------------------------------- +");
         System.out.println("|        ##-[1] Cisne             |");
         System.out.println("|        ##-[2] Flamingo          |");
         System.out.println("|        ##-[3] Hipopotamo        |");
@@ -102,17 +125,17 @@ public class OutputHelper {
         System.out.println("|        ##-[6] Pato              |");
         System.out.println("|        ##-[7] Tartaruga         |");
         System.out.println("|        ##-[0] Sair              |");
-        System.out.println("-----------------------------------");
+        System.out.println("+ ------------------------------- +");
     }
 
     public void mostrarOpcaoListarAnimais() {
-        System.out.println("\n\n--------------------------------");
+        System.out.println("\n\n+ ---------------------------- +");
         System.out.println("|  << -- Listar Animais -- >>  |");
-        System.out.println("--------------------------------");
+        System.out.println("+ ---------------------------- +");
         System.out.println("|    ##-[1] Por Habitat        |");
         System.out.println("|    ##-[2] Por animal         |");
         System.out.println("|    ##-[3] Todos cadastrados  |");
         System.out.println("|    ##-[0] Sair               |");
-        System.out.println("--------------------------------");
+        System.out.println("+ ---------------------------- +");
     }
 }

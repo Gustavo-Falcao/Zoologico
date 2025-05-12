@@ -12,6 +12,7 @@ public class AnimalManager {
 
     // solicita informações e adiciona o objeto Aguia na lista de animais
     public void adicionarAguia() {
+        int idAnimal = solicitarIdAnimal();
         String nome = solicitarNomeAnimal();
         String especie = solicitarEspecieAnimal();
         int idade = solicitarIdadeAnimal();
@@ -23,16 +24,17 @@ public class AnimalManager {
         double tempoMaximoVoo = pegarInput.pegarDouble("Digite o tempo máximo de voo em minutos: ");
         double veloMax = pegarInput.pegarDouble("Digite a velocidade máxima em Km/h: ");
 
-        animais.add(criarAguia(nome, especie, idade, peso, altura, comprimento, cor, alcanceMaximoAltura, tempoMaximoVoo, veloMax));
+        animais.add(criarAguia(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, alcanceMaximoAltura, tempoMaximoVoo, veloMax));
     }
 
     // retorna uma instância criada do objeto Aguia
-    private Aguia criarAguia(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, double alcanceMaxAltura, double tempoMaxVoo, double veloMax) {
-        return new Aguia(nome, especie, idade, peso, altura, comprimento, cor, alcanceMaxAltura, tempoMaxVoo, veloMax);
+    private Aguia criarAguia(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, double alcanceMaxAltura, double tempoMaxVoo, double veloMax) {
+        return new Aguia(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, alcanceMaxAltura, tempoMaxVoo, veloMax);
     }
 
     // solicita informações e adiciona o objeto Capivara na lista de animais
     public void adicionarCapivara() {
+        int idAnimal = solicitarIdAnimal();
         String nome = solicitarNomeAnimal();
         String especie = solicitarEspecieAnimal();
         int idade = solicitarIdadeAnimal();
@@ -43,21 +45,18 @@ public class AnimalManager {
         int numeroPatas = pegarInput.pegarInteiro("Digite o número de patas: ");
         String opcaoAlimentar = pegarInput.pegarString("Digite a opção alimentar: ");
 
-        if(animais.add(criarCapivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar))) {
-            System.out.println("Capivara adicionada com sucesso!!");
-        } else {
-            System.out.println("Não foi possível adicionar a Capivara!!");
-        }
-
+        animais.add(criarCapivara(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, numeroPatas, opcaoAlimentar));
+        System.out.println("Capivara adicionada com sucesso!!");
     }
 
     // retorna uma instância criada do objeto Capivara
-    private Capivara criarCapivara(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPata, String opcaoAlimentar){
-        return new Capivara(nome, especie, idade, peso, altura, comprimento, cor, numeroPata, opcaoAlimentar);
+    private Capivara criarCapivara(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, int numeroPata, String opcaoAlimentar){
+        return new Capivara(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, numeroPata, opcaoAlimentar);
     }
 
     // solicita informações e adiciona o objeto Elefante na lista de animais
     public void adicionarElefante() {
+        int idAnimal = solicitarIdAnimal();
         String nome = solicitarNomeAnimal();
         String especie = solicitarEspecieAnimal();
         int idade = solicitarIdadeAnimal();
@@ -68,12 +67,16 @@ public class AnimalManager {
         int numeroPatas = pegarInput.pegarInteiro("Digite o número de patas: ");
         String opcaoAlimentar = pegarInput.pegarString("Digite a opção alimentar: ");
 
-        animais.add(criarElefante(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar));
+        animais.add(criarElefante(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, numeroPatas, opcaoAlimentar));
     }
 
     // retorna uma instância criada do objeto Elefante
-    private Elefante criarElefante(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPatas, String opcaoAlimentar) {
-        return new Elefante(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar);
+    private Elefante criarElefante(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, int numeroPatas, String opcaoAlimentar) {
+        return new Elefante(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, numeroPatas, opcaoAlimentar);
+    }
+
+    private int solicitarIdAnimal(){
+        return pegarInput.pegarInteiro("Digite o id: ");
     }
 
     private String solicitarNomeAnimal() {
@@ -124,6 +127,18 @@ public class AnimalManager {
         }
         return animaisTerrestres;
     }
+
+    // retorna uma lista somente com os animais herdeiros da classe AnimaisAereos
+    public List<AnimalAereo> getAnimaisAereos() {
+        List<AnimalAereo> animaisAereos = new ArrayList<>();
+        for(Animal animal : this.animais) {
+            if(animal instanceof AnimalAereo animalAereo) {
+                animaisAereos.add(animalAereo);
+            }
+        }
+        return animaisAereos;
+    }
+
 
     public void listarAnimais() {
         for(Animal animal : animais) {

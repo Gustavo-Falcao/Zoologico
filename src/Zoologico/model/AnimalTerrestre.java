@@ -6,8 +6,8 @@ public abstract class AnimalTerrestre extends Animal {
     protected String opcaoAlimentar;
 
 
-    public AnimalTerrestre(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPatas, String opcaoAlimentar) {
-        super(nome, especie, idade, peso, altura, comprimento, cor);
+    public AnimalTerrestre(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, int numeroPatas, String opcaoAlimentar) {
+        super(nome, especie, idade, peso, altura, comprimento, cor, idAnimal);
         this.numeroPatas = numeroPatas;
         this.opcaoAlimentar = opcaoAlimentar;
     }
@@ -20,7 +20,7 @@ public abstract class AnimalTerrestre extends Animal {
         return opcaoAlimentar;
     }
 
-    public void getInfoAnimaisTerrestres() {
+    public void getInfoAnimalTerrestre() {
         super.getInfoDetalhadaAnimais();
         System.out.println("| -> Numero de patas: " + getNumeroPatas());
         System.out.println("| -> Opção alimentar: " + getOpcaoAlimentar());
