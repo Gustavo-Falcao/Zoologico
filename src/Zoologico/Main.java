@@ -78,6 +78,8 @@ public class Main {
                                 System.out.println("Escolha uma opção válida!!");
                             }
                             break;
+                        case 3:
+                            mostrarOutput.mostrarOpcaoTodosAnimais(gerenciadorAnimais);
                         case 0:
                             System.out.println("Saindo...");
                             break;

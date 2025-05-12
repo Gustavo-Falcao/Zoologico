@@ -138,4 +138,16 @@ public class OutputHelper {
         System.out.println("|    ##-[0] Sair               |");
         System.out.println("+ ---------------------------- +");
     }
+
+    public void mostrarOpcaoTodosAnimais(AnimalManager animalManager) {
+        List<Animal> animaisList = animalManager.getAnimais();
+        System.out.println("+ --------------------------------- +");
+        System.out.println("|  << -- Animais Disponiveis -- >>  |");
+        System.out.println("+ --------------------------------- +");
+        int i = 0;
+        for(Animal animal : animaisList) {
+            System.out.println("|    [" + (i++) + "] # >> " + animalManager.getNomeClasseAnimal(animal));
+        }
+        System.out.println("+ ---------------------------------");
+    }
 }
