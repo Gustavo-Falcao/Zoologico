@@ -1,20 +1,26 @@
 package Zoologico.service;
 import Zoologico.model.*;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 public class OutputHelper {
 
     // mostra todos os animais e todos os seus atributos
     public void mostrarAnimaisDetalhados(AnimalManager animalManager) {
-        List<Animal> animais = animalManager.getAnimais();
+        Map<String, Animal> animais = animalManager.getAnimaisCadastrados();
         System.out.println("\n\n-----------------------------------");
         System.out.println("|  <<-- Animais Cadastrados -->>  |");
         System.out.println("-----------------------------------");
-        for(Animal animal : animais) {
-            animal.getInfoDetalhadaAnimais();
-            if(animal instanceof Aguia aguia) {
+        for(String chave : animais.keySet()) {
+            animais.get(chave).getInfoDetalhadaAnimais();
+            if(animais.get(chave) instanceof Aguia aguia) {
                 aguia.getInfoAguia();
+            }
+            else if(animais.get(chave) instanceof Capivara capivara) {
+                capivara.getInfoCapivara();
+            }
+            else if(animais.get(chave) instanceof Elefante elefante) {
+                elefante.getInfoElefante();
             }
             System.out.println("-----------------------------------");
         }
@@ -23,14 +29,13 @@ public class OutputHelper {
     // mostra todos os animais terrestres
     public void mostrarAnimaisTerrestres(AnimalManager animalManager) {
         if(!animalManager.getAnimaisTerrestres().isEmpty()) {
-            List<AnimalTerrestre> listTerrestres = animalManager.getAnimaisTerrestres();
+            Map<String, AnimalTerrestre> mapTerrestres = animalManager.getAnimaisTerrestres();
             System.out.println("----------------------------------");
             System.out.println("|  <<-- Animais Terrestres -->>  |");
             System.out.println("----------------------------------");
-            for(AnimalTerrestre animalTerrestre : listTerrestres) {
-                System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalTerrestre));
-                animalTerrestre.getInfoAnimalTerrestre();
-                System.out.println("|");
+            for(String chave : mapTerrestres.keySet()) {
+                System.out.println("\n| ##--->>>> " + animalManager.getNomeClasseAnimal(mapTerrestres.get(chave)));
+                mapTerrestres.get(chave).getInfoAnimalTerrestre();
             }
             System.out.println("----------------------------------");
         } else {
@@ -41,14 +46,13 @@ public class OutputHelper {
     // mostra todos os animais Aereos
     public void mostrarAnimaisAereos(AnimalManager animalManager) {
         if(!animalManager.getAnimaisAereos().isEmpty()) {
-            List<AnimalAereo> listAereos = animalManager.getAnimaisAereos();
+            Map<String, AnimalAereo> mapAereos = animalManager.getAnimaisAereos();
             System.out.println("----------------------------------");
-            System.out.println("|  <<-- Animais Terrestres -->>  |");
+            System.out.println("|  <<-- Animais Aereos -->>  |");
             System.out.println("----------------------------------");
-            for(AnimalAereo animalAereo : listAereos) {
-                System.out.println("| ##--->>>> " + animalManager.getNomeClasseAnimal(animalAereo));
-                animalAereo.getInfoAnimaisAereos();
-                System.out.println("|");
+            for(String chave : mapAereos.keySet()) {
+                System.out.println("\n| ##--->>>> " + animalManager.getNomeClasseAnimal(mapAereos.get(chave)));
+                mapAereos.get(chave).getInfoAnimaisAereos();
             }
             System.out.println("----------------------------------");
         } else {
@@ -58,7 +62,7 @@ public class OutputHelper {
 
 
     public void mostrarMenuPrincipal() {
-        System.out.println("+ ----------------------------------------------------- +");
+        System.out.println("\n\n+ ----------------------------------------------------- +");
         System.out.println("|  << --  Gerenciamento de Animais no Zoologico  -- >>  |");
         System.out.println("+ ----------------------------------------------------- +");
         System.out.println("|                 ##-[1] Cadastrar animal               |");
@@ -139,14 +143,13 @@ public class OutputHelper {
         System.out.println("+ ---------------------------- +");
     }
 
-    public void mostrarOpcaoTodosAnimais(AnimalManager animalManager) {
-        List<Animal> animaisList = animalManager.getAnimais();
+    public void mostrarOpcaoTodosAnimaisCadastrados(AnimalManager animalManager) {
+        Map<String,Animal> animaisMap = animalManager.getAnimaisCadastrados();
         System.out.println("+ --------------------------------- +");
         System.out.println("|  << -- Animais Disponiveis -- >>  |");
         System.out.println("+ --------------------------------- +");
-        int i = 0;
-        for(Animal animal : animaisList) {
-            System.out.println("|    [" + (i++) + "] # >> " + animalManager.getNomeClasseAnimal(animal));
+        for(String chave : animaisMap.keySet()) {
+            System.out.println("|    [" + chave + "] # >> " + animalManager.getNomeClasseAnimal(animaisMap.get(chave)));
         }
         System.out.println("+ ---------------------------------");
     }

@@ -3,8 +3,8 @@ package Zoologico.model;
 public class Capivara extends AnimalTerrestre{
 
 
-    public Capivara(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, int numeroPatas, String opcaoAlimentar) {
-        super(nome, especie, idade, peso, altura, comprimento, cor, idAnimal, numeroPatas, opcaoAlimentar);
+    public Capivara(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPatas, String opcaoAlimentar) {
+        super(nome, especie, idade, peso, altura, comprimento, cor, numeroPatas, opcaoAlimentar);
     }
 
     @Override
@@ -20,5 +20,9 @@ public class Capivara extends AnimalTerrestre{
     @Override
     public void movimentar() {
         System.out.println("Capivara movimentando");
+    }
+
+    public void getInfoCapivara() {
+        getInfoAnimalTerrestre();
     }
 }

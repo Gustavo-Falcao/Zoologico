@@ -9,9 +9,8 @@ public abstract class Animal {
     protected double altura;
     protected double comprimento;
     protected String cor;
-    protected int idAnimal;
 
-    public Animal(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal) {
+    public Animal(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor) {
         this.nome = nome;
         this.especie = especie;
         this.idade = idade;
@@ -19,7 +18,6 @@ public abstract class Animal {
         this.altura = altura;
         this.comprimento = comprimento;
         this.cor = cor;
-        this.idAnimal = idAnimal;
     }
 
     public String getNome() {
@@ -50,16 +48,11 @@ public abstract class Animal {
         return cor;
     }
 
-    public int getIdAnimal(){
-        return  idAnimal;
-    }
-
     public abstract void descansar();
     public abstract void acordar();
     public abstract void movimentar();
 
     public void getInfoDetalhadaAnimais() {
-        System.out.println("| -> ID: " + getIdAnimal());
         System.out.println("| -> Nome: " + getNome());
         System.out.println("| -> Especie: " + getEspecie());
         System.out.println("| -> Idade: " + getIdade());

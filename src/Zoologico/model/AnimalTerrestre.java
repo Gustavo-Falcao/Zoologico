@@ -6,8 +6,8 @@ public abstract class AnimalTerrestre extends Animal {
     protected String opcaoAlimentar;
 
 
-    public AnimalTerrestre(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int idAnimal, int numeroPatas, String opcaoAlimentar) {
-        super(nome, especie, idade, peso, altura, comprimento, cor, idAnimal);
+    public AnimalTerrestre(String nome, String especie, int idade, double peso, double altura, double comprimento, String cor, int numeroPatas, String opcaoAlimentar) {
+        super(nome, especie, idade, peso, altura, comprimento, cor);
         this.numeroPatas = numeroPatas;
         this.opcaoAlimentar = opcaoAlimentar;
     }

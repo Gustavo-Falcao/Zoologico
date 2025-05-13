@@ -10,6 +10,7 @@ public class Main {
         OutputHelper mostrarOutput = new OutputHelper();
         int opcaoMenuMain;
         String frase = "  #->> Escolha uma opção: ";
+        int numeroChave = 1;
 
         do {
             mostrarOutput.mostrarMenuPrincipal();
@@ -27,10 +28,10 @@ public class Main {
 
                             switch (opcaoAnimalTerrestre) {
                                 case 1:
-                                    gerenciadorAnimais.adicionarCapivara();
+                                    gerenciadorAnimais.adicionarCapivara(numeroChave++);
                                     break;
                                 case 2:
-                                    gerenciadorAnimais.adicionarElefante();
+                                    gerenciadorAnimais.adicionarElefante(numeroChave++);
                                     break;
                                 case 0:
                                     System.out.println("Saindo...");
@@ -79,7 +80,7 @@ public class Main {
                             }
                             break;
                         case 3:
-                            mostrarOutput.mostrarOpcaoTodosAnimais(gerenciadorAnimais);
+                            mostrarOutput.mostrarOpcaoTodosAnimaisCadastrados(gerenciadorAnimais);
                         case 0:
                             System.out.println("Saindo...");
                             break;
