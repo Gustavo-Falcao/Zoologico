@@ -147,9 +147,20 @@ public class OutputHelper {
         System.out.println("+ --------------------------- +");
         System.out.println("|  << -- Buscar animal -- >>  |");
         System.out.println("+ --------------------------- +");
-        System.out.println("[ Se não souber o ID do animal digite 0 para sair, ]");
-        System.out.println("[ volte ao menu e vá em listar todos os animais cadastrados ]");
-        System.out.println("[ lá irá aparecer o ID de cada animal. ]");
+        System.out.println("|      #-[1] Sei o ID         |");
+        System.out.println("|      #-[2] Esqueci o ID     |");
+        System.out.println("+ --------------------------- +");
+    }
+
+    public void mostrarInfoParaDescobrirIDAnimal() {
+        System.out.println("+ ----------------------------------- +");
+        System.out.println("|  << -- Encontrando ID Animal -- >>  |");
+        System.out.println("+ ----------------------------------- +");
+        System.out.println("Para encontrar o ID siga os passos abaixo: ");
+        System.out.println(" - Volte ao menu principal");
+        System.out.println(" - Escolha a opção [Listar Animais]");
+        System.out.println(" - Escolha a opção [Todos cadastrados]");
+        System.out.println(" - Encontre o ID do animal que está procurando!!");
     }
 
     public void mostrarOpcaoTodosAnimaisCadastrados(AnimalManager animalManager) {
