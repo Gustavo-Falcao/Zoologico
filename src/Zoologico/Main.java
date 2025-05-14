@@ -13,19 +13,23 @@ public class Main {
         int numeroChave = 1;
 
         do {
+            //Menu principal
             mostrarOutput.mostrarMenuPrincipal();
             opcaoMenuMain = pegarInput.pegarInteiro(frase);
 
             switch (opcaoMenuMain) {
                 case 1:
+                    //Menu de Habitates
                     mostrarOutput.mostrarOpcaoHabitatAnimais();
                     int opcaoMenuHabitat = pegarInput.pegarInteiro(frase);
 
                     switch (opcaoMenuHabitat) {
                         case 1:
+                            //Menu Animais Terrestres
                             mostrarOutput.mostrarOpcaoAnimaisTerrestres();
                             int opcaoAnimalTerrestre = pegarInput.pegarInteiro(frase);
 
+                            //Criando Animais Terrestres
                             switch (opcaoAnimalTerrestre) {
                                 case 1:
                                     gerenciadorAnimais.adicionarCapivara(numeroChave++);
@@ -42,10 +46,12 @@ public class Main {
                             }
                             break;
                         case 2:
+                            //Menu Animais Aereos
                             mostrarOutput.mostrarOpcaoAnimaisAereos();
                             int opcaoAnimalAereo = pegarInput.pegarInteiro(frase);
                             break;
                         case 3:
+                            //Menu Animais Aquaticos
                             mostrarOutput.mostrarOpcaoAnimaisAquaticos();
                             int opcaoAnimalAquatico = pegarInput.pegarInteiro(frase);
                             break;
@@ -58,11 +64,13 @@ public class Main {
                     }
                     break;
                 case 2:
+                    //Menu Listagem animais
                     mostrarOutput.mostrarOpcaoListarAnimais();
                     int opcaoListarAnimal = pegarInput.pegarInteiro(frase);
 
                     switch (opcaoListarAnimal) {
                         case 1:
+                            //Listagem por Habitates
                             mostrarOutput.mostrarOpcaoHabitatAnimais();
                             int opcaoListPorHabitat = pegarInput.pegarInteiro(frase);
 
@@ -80,6 +88,7 @@ public class Main {
                             }
                             break;
                         case 3:
+                            //Listagem de todos Animais cadastrados
                             mostrarOutput.mostrarOpcaoTodosAnimaisCadastrados(gerenciadorAnimais);
                         case 0:
                             System.out.println("Saindo...");
@@ -90,6 +99,7 @@ public class Main {
                     }
                     break;
                 case 3:
+                    //Buscar animal
                     mostrarOutput.mostrarMenuBuscarAnimal();
                     String chaveBusca = pegarInput.pegarString("#>> Digite o ID ou 0(para sair): ");
 
