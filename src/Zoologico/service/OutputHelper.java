@@ -143,6 +143,15 @@ public class OutputHelper {
         System.out.println("+ ---------------------------- +");
     }
 
+    public void mostrarMenuBuscarAnimal() {
+        System.out.println("+ --------------------------- +");
+        System.out.println("|  << -- Buscar animal -- >>  |");
+        System.out.println("+ --------------------------- +");
+        System.out.println("[ Se não souber o ID do animal digite 0 para sair, ]");
+        System.out.println("[ volte ao menu e vá em listar todos os animais cadastrados ]");
+        System.out.println("[ lá irá aparecer o ID de cada animal. ]");
+    }
+
     public void mostrarOpcaoTodosAnimaisCadastrados(AnimalManager animalManager) {
         Map<String,Animal> animaisMap = animalManager.getAnimaisCadastrados();
         System.out.println("+ --------------------------------- +");

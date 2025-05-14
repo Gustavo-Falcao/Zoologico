@@ -3,8 +3,6 @@ package Zoologico.service;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import Zoologico.model.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class AnimalManager {
@@ -133,6 +131,11 @@ public class AnimalManager {
                 }
             }
         return animaisAereos;
+    }
+
+    public Animal buscarAnimal(String chaveBusca, AnimalManager animalManager) {
+        Map<String, Animal> animais = animalManager.getAnimaisCadastrados();
+        return animais.getOrDefault(chaveBusca, null);// se for verdadeiro será retornado o valor relacionado á chave caso contrário será retornado null.
     }
 
 

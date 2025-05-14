@@ -89,6 +89,17 @@ public class Main {
                             break;
                     }
                     break;
+                case 3:
+                    mostrarOutput.mostrarMenuBuscarAnimal();
+                    String chaveBusca = pegarInput.pegarString("#>> Digite o ID ou 0(para sair): ");
+
+                    if(gerenciadorAnimais.buscarAnimal(chaveBusca, gerenciadorAnimais) != null) {
+                        System.out.println("Animal encontrado!!!!!");
+                    } else {
+                        System.out.println("Animal não foi encontrado!!!");
+                    }
+
+                break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
