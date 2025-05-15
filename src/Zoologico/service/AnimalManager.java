@@ -133,11 +133,39 @@ public class AnimalManager {
         return animaisAereos;
     }
 
-    public Animal buscarAnimal(String chaveBusca, AnimalManager animalManager) {
+    public Animal getAnimalPorChave(String chaveBusca, AnimalManager animalManager) {
         Map<String, Animal> animais = animalManager.getAnimaisCadastrados();
         return animais.getOrDefault(chaveBusca, null);// se for verdadeiro será retornado o valor relacionado á chave caso contrário será retornado null.
     }
 
+    public void buscarAnimal(InputHelper inputHelper, AnimalManager animalManager, OutputHelper outputHelper) {
+        String chaveBusca = inputHelper.pegarString("Digite o ID do animal desejado: ");
+        boolean animalEncontrado = true;
+
+        while(getAnimalPorChave(chaveBusca, animalManager) == null) {
+            int opcaoSegundaChance;
+            System.out.println("\nAnimal não foi encontrado!!!");
+            System.out.println(" #>> [1] Voltar ao menu");
+            System.out.println(" #>> [2] Tentar novamente");
+            opcaoSegundaChance = inputHelper.pegarInteiro("Escolha uma opção: ");
+            if(opcaoSegundaChance == 1) {
+                System.out.println("Voltando...");
+                animalEncontrado = false;
+                break;
+            }
+            else if(opcaoSegundaChance == 2) {
+                chaveBusca = inputHelper.pegarString("Digite o ID do animal desejado: ");
+            }
+            else {
+                System.out.println("ERRO -> Escolha uma opção válida!!");
+            }
+        }
+        if(animalEncontrado) {
+            System.out.println("Animal encontrado!!!");
+            outputHelper.mostrarAnimalDetalhado(getAnimalPorChave(chaveBusca, animalManager), animalManager);
+        }
+
+    }
 
 //    public void listarAnimais() {
 //        for(Animal animal : animais) {

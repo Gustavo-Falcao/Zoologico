@@ -116,31 +116,7 @@ public class Main {
                     int opcaSabeIDOuNao = pegarInput.pegarInteiro(frase);
                     boolean animalEncontrado = true;
                     if(opcaSabeIDOuNao == 1) {
-                        String chaveBusca = pegarInput.pegarString("Digite o ID do animal desejado: ");
-                        if(gerenciadorAnimais.buscarAnimal(chaveBusca, gerenciadorAnimais) == null) {
-                            int opcaoSegundaChance;
-                            while(gerenciadorAnimais.buscarAnimal(chaveBusca, gerenciadorAnimais) == null) {
-                                System.out.println("\nAnimal não foi encontrado!!!");
-                                System.out.println(" #>> [1] Voltar ao menu");
-                                System.out.println(" #>> [2] Tentar novamente");
-                                opcaoSegundaChance = pegarInput.pegarInteiro(frase);
-                                if(opcaoSegundaChance == 1) {
-                                    System.out.println("Voltando...");
-                                    animalEncontrado = false;
-                                    break;
-                                }
-                                else if(opcaoSegundaChance == 2) {
-                                    chaveBusca = pegarInput.pegarString("Digite o ID do animal desejado: ");
-                                }
-                                else {
-                                    System.out.println("Escolha uma opção válida!!");
-                                }
-                            }
-                        }
-                        if(animalEncontrado){
-                            System.out.println("Animal encontrado !!!");
-                            mostrarOutput.mostrarAnimalDetalhado(gerenciadorAnimais.buscarAnimal(chaveBusca, gerenciadorAnimais), gerenciadorAnimais);
-                        }
+                        gerenciadorAnimais.buscarAnimal(pegarInput, gerenciadorAnimais, mostrarOutput);
                     }
                     else if(opcaSabeIDOuNao == 2) {
                         mostrarOutput.mostrarInfoParaDescobrirIDAnimal();
