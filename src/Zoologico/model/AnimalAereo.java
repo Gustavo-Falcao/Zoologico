@@ -27,8 +27,8 @@ public abstract class AnimalAereo extends Animal {
 
     public void getInfoAnimaisAereos() {
         getInfoDetalhadaAnimais();
-        System.out.println("| -> Alcance Max de altura: " + getAlcanceMAxAltura());
-        System.out.println("| -> Tempo máximo de voo: " + getTempoMaxVoo());
-        System.out.println("| -> Velocidade máxima voando: " + getVelocidadeMaxVoo());
+        System.out.println("| -> Alcance Max de altura: " + getAlcanceMAxAltura() + " metros");
+        System.out.println("| -> Tempo máximo de voo: " + getTempoMaxVoo() + " minutos");
+        System.out.println("| -> Velocidade máxima voando: " + getVelocidadeMaxVoo() + " km/h");
     }
 }

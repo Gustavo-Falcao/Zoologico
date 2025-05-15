@@ -19,9 +19,9 @@ public class AnimalManager {
         double altura = solicitarAlturaAnimal();
         double comprimento = solicitarComprimentoAnimal();
         String cor = solicitarCorAnimal();
-        double alcanceMaximoAltura = pegarInput.pegarDouble("Digite o alcance máximo de altura em metros: ");
-        double tempoMaximoVoo = pegarInput.pegarDouble("Digite o tempo máximo de voo em minutos: ");
-        double veloMax = pegarInput.pegarDouble("Digite a velocidade máxima em Km/h: ");
+        double alcanceMaximoAltura = pegarInput.pegarDouble("Digite a capacidade máxima de altura (em metros): ");
+        double tempoMaximoVoo = pegarInput.pegarDouble("Digite a capacidade máxima de voo (em minutos): ");
+        double veloMax = pegarInput.pegarDouble("Digite a velocidade máxima (em Km/h): ");
 
         animaisMap.put("K" + valorChave, criarAguia(nome, especie, idade, peso, altura, comprimento, cor, alcanceMaximoAltura, tempoMaximoVoo, veloMax));
         System.out.println("Aguia adicionada com sucesso!!");

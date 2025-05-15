@@ -30,28 +30,11 @@ public class OutputHelper {
         System.out.println("|  <<-- " + animalManager.getNomeClasseAnimal(animal) + " -->>  |");
 
         switch (animal) {
-            case Aguia aguia:
-                aguia.getInfoAguia();
-            break;
-            case Capivara capivara:
-                capivara.getInfoCapivara();
-            break;
-            case Elefante elefante:
-                elefante.getInfoElefante();
-            break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + animal);
+            case Aguia aguia -> aguia.getInfoAguia();
+            case Capivara capivara -> capivara.getInfoCapivara();
+            case Elefante elefante -> elefante.getInfoElefante();
+            default -> System.out.println("ERRO -> Animal passado não se encaixa em nenhum perfil");
         }
-
-//        if (animal instanceof Aguia aguia) {
-//            aguia.getInfoAguia();
-//        }
-//        else if(animal instanceof Capivara capivara) {
-//            capivara.getInfoCapivara();
-//        }
-//        else if(animal instanceof Elefante elefante) {
-//            elefante.getInfoElefante();
-//        }
 
     }
 

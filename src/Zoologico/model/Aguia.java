@@ -28,9 +28,5 @@ public class Aguia extends AnimalAereo implements SomAnimal, Habilidade {
 
     public void getInfoAguia() {
         getInfoAnimaisAereos();
-        System.out.println("| -> Alcance máximo de altura: " + getAlcanceMAxAltura() + " metros");
-        System.out.println("| -> Tempo máximo de voo: " + getTempoMaxVoo() + " minutos");
-        System.out.println("| -> Velocidade máxima: " + getVelocidadeMaxVoo() + " Km/h");
     }
-
 }
