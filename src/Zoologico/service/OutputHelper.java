@@ -26,6 +26,35 @@ public class OutputHelper {
         }
     }
 
+    public void mostrarAnimalDetalhado(Animal animal, AnimalManager animalManager) {
+        System.out.println("|  <<-- " + animalManager.getNomeClasseAnimal(animal) + " -->>  |");
+
+        switch (animal) {
+            case Aguia aguia:
+                aguia.getInfoAguia();
+            break;
+            case Capivara capivara:
+                capivara.getInfoCapivara();
+            break;
+            case Elefante elefante:
+                elefante.getInfoElefante();
+            break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + animal);
+        }
+
+//        if (animal instanceof Aguia aguia) {
+//            aguia.getInfoAguia();
+//        }
+//        else if(animal instanceof Capivara capivara) {
+//            capivara.getInfoCapivara();
+//        }
+//        else if(animal instanceof Elefante elefante) {
+//            elefante.getInfoElefante();
+//        }
+
+    }
+
     // mostra todos os animais terrestres
     public void mostrarAnimaisTerrestres(AnimalManager animalManager) {
         if(!animalManager.getAnimaisTerrestres().isEmpty()) {

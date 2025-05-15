@@ -139,6 +139,7 @@ public class Main {
                         }
                         if(animalEncontrado){
                             System.out.println("Animal encontrado !!!");
+                            mostrarOutput.mostrarAnimalDetalhado(gerenciadorAnimais.buscarAnimal(chaveBusca, gerenciadorAnimais), gerenciadorAnimais);
                         }
                     }
                     else if(opcaSabeIDOuNao == 2) {
